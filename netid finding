@@ -1,0 +1,7 @@
+email=input("enter your mail id:")
+
+index=email.index("@")
+
+netid=email[:index]
+domain=email[index:]
+print(f"The NETID:{netid} and DOMAIN:{domain}")
