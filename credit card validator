@@ -1,0 +1,41 @@
+even_digits=0
+odd_digits=0
+sum=0
+
+#step1:
+card_number=input("enter your card no:")
+card_number=card_number.replace("-","")
+card_number=card_number.replace(" ","")
+card_number=card_number[::-1]  
+
+
+#step 2
+
+for  i in card_number[::2]:  
+    odd_digits+=int(i)
+"""
+explaination:
+
+[9 9 5 8 2 5 6 0 0 1  4  9  0  5  2 6  ]
+[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 ]
+[9   5   2   6   0    4     0     2  ] =28
+"""
+# step 3
+for i in card_number[1::2]:
+
+    i=int(i) *2
+    if(i>=10):  #the maximum possibility is 18 so....
+        even_digits+=(1+(i%10))
+    else:
+        even_digits+=int(i)
+# print("even sum:",even_digits)
+# step 4
+sum=odd_digits+even_digits
+
+if (sum % 10 ==0):
+    print("your card number is valid")
+
+else:
+    print("your card number is in valid")
+
+
